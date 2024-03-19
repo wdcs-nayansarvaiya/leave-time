@@ -65,6 +65,7 @@ const TimeInputForm = () => {
               type="time"
               value={startTime}
               onChange={handleStartTimeChange}
+              required
               className="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-blue-300 rounded-md bg-blue-50"
             />
           </div>
@@ -80,6 +81,7 @@ const TimeInputForm = () => {
               type="time"
               value={endTime}
               onChange={handleEndTimeChange}
+              required
               className="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-blue-300 rounded-md bg-blue-50"
             />
           </div>
@@ -87,14 +89,14 @@ const TimeInputForm = () => {
             Submit
           </button>
         </form>
-        <div className="mt-4">
+       {leaveTime !== "" ? <div className="mt-4">
           <h4
             id="leaveTime"
             className="mt-1 text-lg font-semibold text-gray-900"
           >
             Leave Time: {leaveTime}
           </h4>
-        </div>
+        </div>:null}
       </div>
     </div>
   );
