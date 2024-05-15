@@ -1,0 +1,116 @@
+@import url(https://fonts.googleapis.com/css?family=Bungee);
+
+.text3 {
+    text-shadow: 0 13.36px 8.896px #2c482e, 0 -2px 1px #aeffb4;
+    letter-spacing: -4px;
+    color: #6fb374;
+    letter-spacing: 2px;
+}
+
+.text4 {
+    color: #ffffff;
+    text-shadow: 0px 4px 3px #6fb374,
+        0px 8px 13px #6fb374,
+        0px 18px 23px rgba(0, 0, 0, 0.1);
+}
+
+.text5 {
+    -webkit-text-stroke: 1px #00ff00;
+    text-shadow: 0px 1px 4px #23430C;
+    color: #fff;
+    margin-left: 150px;
+}
+
+body {
+    background: #000;
+
+
+}
+
+.container {
+    width: 500px;
+    padding: 40px;
+    border-radius: 0.75rem;
+    background: black;
+    box-shadow: 0 10px 10px #00ff00, 0 6px 6px #00ff00;
+    border: 1px solid #00ff00;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.containerRound {
+    width: 500px;
+    padding: 40px;
+    background: black;
+    margin: auto;
+    margin-top: 5%;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.labelClass {
+
+    color: #fff;
+}
+
+.labelClass2 {
+
+    color: #fff;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+}
+
+.inputField {
+    margin-bottom: 1rem;
+    background: #000;
+}
+
+.inputField input {
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 0.25rem;
+    background: #fff;
+
+}
+
+.submitButton {
+    width: 20%;
+    padding: 0.75rem;
+    border: 2px solid #fff;
+    background-color: #fff;
+    color: #000;
+    /* border-radius: 0.25rem; */
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+
+}
+
+/* .submitButton:hover {
+    background-color: #90cdf4;
+    color: #000;
+} */
+
+@media (min-width: 640px) {
+    .container {
+        max-width: 40rem;
+    }
+}
+
+.dialog {
+    position: fixed;
+    width: 500px;
+    padding: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: black;
+    /* box-shadow: 0 10px 10px #00ff00, 0 6px 6px #00ff00; */
+    padding: 20px;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); */
+}
