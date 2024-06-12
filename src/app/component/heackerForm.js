@@ -52,54 +52,58 @@ const HeackerForm = () => {
       hour12: true,
     });
     setLeaveTime(leaveTimeString);
-    setTimeout(() => {
-      setLeaveTime("");
-      setStartTime("");
-      setEndTime("");
-    }, 6000);
+    // setTimeout(() => {
+    //   setLeaveTime("");
+    //   setStartTime("");
+    //   setEndTime("");
+    // }, 6000);
   };
 
   return (
     <>
       <div className="flex justify-center items-center h-screen bg-gray-100">
-        {leaveTime == "" ? (
-          <div className="container">
-            <h1 className="text5">Time Checker</h1>
-            <form onSubmit={handleSubmit}>
-              <div className="inputField">
-                <label htmlFor="startTime" className="labelClass">
-                  Effective Hours:
-                </label>
-                <input
-                  id="startTime"
-                  type="time"
-                  value={startTime}
-                  onChange={handleStartTimeChange}
-                  required
-                  className="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-blue-300 rounded-md bg-blue-50"
-                />
-              </div>
-              <div className="inputField">
-                <label htmlFor="endTime" className="labelClass">
-                  Last In Time of Office:
-                </label>
-                <input
-                  id="endTime"
-                  type="time"
-                  value={endTime}
-                  onChange={handleEndTimeChange}
-                  required
-                  className="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-blue-300 rounded-md bg-blue-50"
-                />
-              </div>
-              <button type="submit" className="submitButton">
-                Submit
-              </button>
-            </form>
-          </div>
-        ) : null}
+        <div className="container">
+          <h1 className="text5">Time Checker</h1>
+          <form onSubmit={handleSubmit}>
+            <div className="inputField">
+              <label htmlFor="startTime" className="labelClass">
+                Effective Hours:
+              </label>
+              <input
+                id="startTime"
+                type="time"
+                value={startTime}
+                onChange={handleStartTimeChange}
+                required
+                className="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-blue-300 rounded-md bg-blue-50"
+              />
+            </div>
+            <div className="inputField">
+              <label htmlFor="endTime" className="labelClass">
+                Last In Time of Office:
+              </label>
+              <input
+                id="endTime"
+                type="time"
+                value={endTime}
+                onChange={handleEndTimeChange}
+                required
+                className="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-blue-300 rounded-md bg-blue-50"
+              />
+            </div>
+            <button type="submit" className="submitButton">
+              Submit
+            </button>
+          </form>
+        </div>
+        <h4
+          id="leaveTime"
+          style={{ color: "white", marginLeft: "750px", fontSize: "25px" }}
+        >
+          Leave Time: {leaveTime}
+        </h4>
       </div>
-      {leaveTime !== "" ? (
+      {/* {leaveTime !== "" ? (
         <div className="containerRound">
           <h3 style={{ textTransform: "capitalize" }}>
             {name !== null ? "Hello " + name : ""}
@@ -112,7 +116,7 @@ const HeackerForm = () => {
             </h4>
           </div>
         </div>
-      ) : null}
+      ) : null} */}
 
       {/* <p
         style={{
