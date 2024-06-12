@@ -100,7 +100,7 @@ const HeackerForm = () => {
           id="leaveTime"
           style={{ color: "white", marginLeft: "750px", fontSize: "25px" }}
         >
-          Leave Time: {leaveTime}
+          {leaveTime !== "" ? `Leave Time: ${leaveTime}` : null}
         </h4>
       </div>
       {/* {leaveTime !== "" ? (
