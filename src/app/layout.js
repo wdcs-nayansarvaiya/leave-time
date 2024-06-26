@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
-// import './globals.css'
+import './globals.css'
 // import "../app/style.css";
-import "../app/heckerForm.css"
+// import "../app/heckerForm.css"
 
 
 const inter = Inter({ subsets: ["latin"] });
