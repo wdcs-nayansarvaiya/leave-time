@@ -57,7 +57,8 @@ const Navbar = () => {
 
 
     return (
-        <><div className="h-screen flex flex-col">
+        <>
+            {/* <div className="h-screen flex flex-col"> */}
             <nav className="bg-white shadow-lg p-4">
                 <div className="container mx-auto flex justify-between items-center">
                     <div className="text-xl font-bold">Leave Now</div>
@@ -133,7 +134,7 @@ const Navbar = () => {
                 }}>
                 </div>
             </div>
-        </div>
+            {/* </div > */}
         </>
     );
 };
