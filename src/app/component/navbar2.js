@@ -61,7 +61,7 @@ const Navbar = () => {
             <div className="h-screen flex flex-col">
                 <nav className="bg-white shadow-lg p-4">
                     <div className="container mx-auto flex justify-between items-center">
-                        <div className="text-xl font-bold">Leave Now</div>
+                        <div className="text-xl font-bold ml-8">Leave Now</div>
                         <div className="flex space-x-4">
                             {/* Dropdown for selecting round-shaped images */}
                             <div className="relative inline-block">
