@@ -93,7 +93,7 @@ const Navbar = () => {
                             {/* Dropdown for selecting theme colors */}
                             <div className="relative inline-block">
                                 <button
-                                    className="bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 rounded shadow flex items-center leading-tight focus:outline-none focus:shadow-outline"
+                                    className="bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 rounded shadow flex items-center leading-tight focus:outline-none focus:shadow-outline mr-8"
                                     onClick={toggleDropdownTheme}
                                 >
                                     <span class={`mr-2 inline-block rounded-full ${gradientClass} px-4 py-4 text-white`}> </span>
