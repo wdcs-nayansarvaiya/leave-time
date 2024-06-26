@@ -2,13 +2,12 @@
 import React from 'react';
 import TimeInputForm from './component/timeInputForm';
 import NavbarPage from './component/navbarPage';
+import TheamNewComp from './component/theamNew';
+import Navbar from './component/navbar2';
 
 const HomePage = () => {
   return (<>
-
-    <div style={{ background: "black" }}>
-      <NavbarPage />
-    </div>
+    <Navbar />
   </>
   );
 
