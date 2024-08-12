@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
         <meta name="description" content={metadata.description} />
 
         {/* Google Analytics Tag */}
-        <script
+        {/* <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-GEG9MKOY58"
         ></script>
@@ -52,7 +52,7 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-GEG9MKOY58');
           `,
           }}
-        />
+        /> */}
       </Head>
       <body className={inter.className}>{children}</body>
     </html>
