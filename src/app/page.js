@@ -4,12 +4,16 @@ import TimeInputForm from "./component/timeInputForm";
 import NavbarPage from "./component/navbarPage";
 import TheamNewComp from "./component/theamNew";
 import Navbar from "./component/navbar2";
+import { logEvent } from "firebase/analytics";
+import { analytics } from "../app/utils/firebase";
 
 const HomePage = () => {
-  // useEffect(() => {
-  //   // Example of logging an event
-  //   logEvent(analytics, "page_view");
-  // }, []);
+  useEffect(() => {
+    if (analytics) {
+      // Example of logging an event
+      logEvent(analytics, "page_view");
+    }
+  }, []);
   return (
     <>
       <Navbar />
