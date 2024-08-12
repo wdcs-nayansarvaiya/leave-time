@@ -109,7 +109,7 @@ const HeackerForm = () => {
             {name !== null ? "Hello " + name : ""}
           </h3>
           <img src="/images/round.gif"></img>
-          <div class="centered">
+          <div className="centered">
             {" "}
             <h4 id="leaveTime" className="labelClass2">
               Leave Time: {leaveTime}
