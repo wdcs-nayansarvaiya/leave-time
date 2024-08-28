@@ -55,10 +55,9 @@ const Navbar = () => {
     <>
       <div className="h-screen flex flex-col">
         <nav className="bg-white shadow-lg p-4">
-          <div className="container mx-auto flex justify-between items-center">
-            <div className="text-xl font-bold ml-8">Leave Now</div>
-            <div className="flex space-x-4">
-              {/* Dropdown for selecting round-shaped images */}
+          <div className="container mx-auto flex flex-wrap justify-between items-center">
+            <div className="text-xl font-bold ml-4 md:ml-8">Leave Now</div>
+            <div className="flex space-x-4 mt-4 md:mt-0">
               <div className="relative inline-block">
                 <button
                   className="bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 rounded shadow flex items-center leading-tight focus:outline-none focus:shadow-outline"
@@ -95,10 +94,9 @@ const Navbar = () => {
                 )}
               </div>
 
-              {/* Dropdown for selecting theme colors */}
               <div className="relative inline-block">
                 <button
-                  className="bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 rounded shadow flex items-center leading-tight focus:outline-none focus:shadow-outline mr-8"
+                  className="bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 rounded shadow flex items-center leading-tight focus:outline-none focus:shadow-outline"
                   onClick={toggleDropdownTheme}
                 >
                   <span
@@ -134,12 +132,11 @@ const Navbar = () => {
             </div>
           </div>
         </nav>
-        <div className="flex justify-between items-center h-screen">
+        <div className="flex flex-col md:flex-row justify-between items-center flex-grow px-4 md:px-8">
           <TheamNewComp color={gradientClass} colTheme={isDark} />
           <div
-            className={`w-[700px] h-[350px] mt-2 mr-[80] ${gradientClass}`}
+            className={`w-full md:w-[700px] h-[350px] mt-4 md:mt-0 md:mr-[80px] ${gradientClass}`}
             style={{
-              // WebkitMaskImage: `url('/images/7.png')`,
               maskImage: `url(${selectedImage})`,
               WebkitMaskSize: "contain",
               maskSize: "contain",
