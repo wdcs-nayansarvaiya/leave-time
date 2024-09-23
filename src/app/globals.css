@@ -33,3 +33,53 @@ body {
       transparent,
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 } */
+
+@keyframes borderAnimation {
+  0% {
+    border-color: red;
+  }
+
+  25% {
+    border-color: yellow;
+  }
+
+  50% {
+    border-color: green;
+  }
+
+  75% {
+    border-color: blue;
+  }
+
+  100% {
+    border-color: red;
+  }
+}
+
+.animated-border {
+  border: 2px solid;
+  /* Adjust the border width if needed */
+  animation: borderAnimation 3s linear infinite;
+  /* Adjust duration as needed */
+}
+
+.contentset {
+  background-color: #f1f5f9;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+@keyframes slowFadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-slowFadeIn {
+  animation: slowFadeIn 3s forwards;
+  /* Slows down the fade-in to 3 seconds */
+}

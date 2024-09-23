@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react";
 import TheamNewComp from "./theamNew";
 import { designImageConst, themeObjects } from "../utils/constant";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Navbar = () => {
   const [selectedImage, setSelectedImage] = useState("/images/1.png");
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [dropdownVisibleTheme, setDropdownVisibleTheme] = useState(false);
   const [isDark, setIsDark] = useState(true);
+  const [popupVisible, setPopupVisible] = useState(false);
   const [gradientClass, setGradientClass] = useState(
     "bg-gradient-to-r from-blue-500 to-indigo-900"
   );
+  const router = useRouter()
 
   useEffect(() => {
     let designTheme = localStorage.getItem("design");
@@ -51,6 +55,10 @@ const Navbar = () => {
     setDropdownVisibleTheme(!dropdownVisibleTheme);
   };
 
+  const togglePopup = () => {
+    setPopupVisible(!popupVisible);
+  };
+
   return (
     <>
       <div className="h-screen flex flex-col">
@@ -58,6 +66,24 @@ const Navbar = () => {
           <div className="container mx-auto flex flex-wrap justify-between items-center">
             <div className="text-xl font-bold ml-4 md:ml-8">Leave Now</div>
             <div className="flex space-x-4 mt-4 md:mt-0">
+              <div className="relative inline-block">
+                <button
+                  className="bg-white border border-gray-300 animated-border px-4 py-2 rounded shadow flex items-center leading-tight focus:outline-none focus:shadow-outline"
+                  onClick={() => togglePopup()}
+                >
+                  <img
+                    src="/images/leave-now.png"
+                    alt={selectedImage}
+                    className="rounded-full w-8 h-8 mr-2"
+                  />
+                  <span className="truncate">Get Extension</span>
+                </button>
+                <span className="absolute top-0 left-0 bg-gradient-to-r from-blue-500 to-green-500 text-white text-xs px-2 py-1 rounded-full transform transition-transform duration-300 ease-in-out translate-x-1 -translate-y-1 animate-bounce">
+                  New
+                </span>
+              </div>
+
+
               <div className="relative inline-block">
                 <button
                   className="bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 rounded shadow flex items-center leading-tight focus:outline-none focus:shadow-outline"
@@ -146,7 +172,65 @@ const Navbar = () => {
             }}
           ></div>
         </div>
+        {/* Footer Section */}
+        <footer className="from-gray-100 via-gray-200 to-gray-300 text-center py-4  opacity-0 animate-slowFadeIn">
+          <p className="text-black-600 font-semibold transition-colors duration-3000 ease-in-out hover:text-gray-900">
+            Created by{" "}
+            <span className="text-blue-700 transition-colors duration-3000 ease-in-out hover:text-blue-600">
+              Nayan Sarvaiya
+            </span>
+          </p>
+        </footer>
       </div>
+
+
+
+      {popupVisible && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white rounded-lg p-4 max-w-md mx-auto h-3/4 w-3/4 overflow-y-auto">
+            <h2 className="text-lg font-bold">Extension Details</h2>
+            <p className="mt-2">Here are the details about the extension.</p>
+
+            <div className="mt-4">
+              <h3 className="font-semibold">Why It Was Created</h3>
+              <p className="contentset">Users currently have to manually enter the time on a sheet or another tool, remember both times, and then input the data into the web after clicking a button to get the result. However, the "Leave Now" extension now provides this time with just one click.
+                Below are the steps to get the extension and how to use it effectively:
+              </p>
+
+              <h3 className="font-semibold mt-4">Steps to Get the Extension</h3>
+              <div className="contentset">
+                <ol className="list-decimal ml-6">
+                  <li>Click on the "Get Extension" button.</li>
+                  <li>Open the Chrome Web Store and click on "Add to Chrome" for the extension.</li>
+                  <li>Pin the "Leave Now" extension to your browser toolbar.</li>
+                </ol>
+              </div>
+
+              <h3 className="font-semibold mt-4">How to Use</h3>
+              <div className="contentset">
+                <ol className="list-decimal ml-6">
+                  <li>Open the Kaka website.</li>
+                  <li>Click on the "Me" menu and click on the "attendance".</li>
+                  <li>Click on the "Leave Now" extension.</li>
+                  <li>Get Auto Calculated Leave Time</li>
+                </ol>
+              </div>
+            </div>
+
+            <div className="mt-4 flex justify-end">
+              <button onClick={togglePopup} className="mr-2 bg-blue-500 text-white px-4 py-2 rounded">
+                Close
+              </button>
+              <Link href="https://chromewebstore.google.com/detail/keka-time-logger/oofdmkkokijafmggmfofdibiikjpdcjm" target="_blank">
+                <button onClick={togglePopup} className="bg-blue-500 text-white px-4 py-2 rounded">
+                  Get Extension
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+      )}
     </>
   );
 };
