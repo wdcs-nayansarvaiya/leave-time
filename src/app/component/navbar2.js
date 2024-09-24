@@ -183,8 +183,6 @@ const Navbar = () => {
         </footer>
       </div>
 
-
-
       {popupVisible && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white rounded-lg p-4 max-w-md mx-auto h-3/4 w-3/4 overflow-y-auto">
@@ -192,9 +190,14 @@ const Navbar = () => {
             <p className="mt-2">Here are the details about the extension.</p>
 
             <div className="mt-4">
-              <h3 className="font-semibold">Why It Was Created</h3>
-              <p className="contentset">Users currently have to manually enter the time on a sheet or another tool, remember both times, and then input the data into the web after clicking a button to get the result. However, the "Leave Now" extension now provides this time with just one click.
-                Below are the steps to get the extension and how to use it effectively:
+              <h3 className="font-semibold">Why was this tool created?</h3>
+              <p className="contentset">
+                During office hours, users often face a number of punch-ins or punch-outs. Amidst this, they lose track of when it's time to leave the office. To address this issue, we developed this tool. Initially, we created a webpage-based tool where users had to manually check the time on another sheet, remember it, enter it here, and then click a button to display the time they could leave the office.<br /><br />
+
+                We have simplified that process by introducing a solution in the form of a browser extension called "Leave Now." This extension provides employees with the facility of "auto calculate time," making it easier for them.<br /><br />
+
+                The steps to use this tool are outlined below.
+
               </p>
 
               <h3 className="font-semibold mt-4">Steps to Get the Extension</h3>
@@ -221,14 +224,14 @@ const Navbar = () => {
               <button onClick={togglePopup} className="mr-2 bg-blue-500 text-white px-4 py-2 rounded">
                 Close
               </button>
-              <Link href="https://chromewebstore.google.com/detail/keka-time-logger/oofdmkkokijafmggmfofdibiikjpdcjm" target="_blank">
+              <Link href="https://chromewebstore.google.com/detail/leave-now/kggajnngbeidnchjibidcebolhhkifak" target="_blank">
                 <button onClick={togglePopup} className="bg-blue-500 text-white px-4 py-2 rounded">
                   Get Extension
                 </button>
               </Link>
             </div>
           </div>
-        </div>
+        </div >
 
       )}
     </>
