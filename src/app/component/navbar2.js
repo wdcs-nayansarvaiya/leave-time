@@ -13,7 +13,7 @@ const Navbar = () => {
   const [gradientClass, setGradientClass] = useState(
     "bg-gradient-to-r from-blue-500 to-indigo-900"
   );
-  const router = useRouter()
+  const router = useRouter();
 
   useEffect(() => {
     let designTheme = localStorage.getItem("design");
@@ -82,7 +82,6 @@ const Navbar = () => {
                   New
                 </span>
               </div>
-
 
               <div className="relative inline-block">
                 <button
@@ -185,27 +184,42 @@ const Navbar = () => {
 
       {popupVisible && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white rounded-lg p-4 max-w-md mx-auto h-3/4 w-3/4 overflow-y-auto">
+          <div className="bg-white rounded-lg p-4 max-w-md mx-auto h-3/4 w-3/4 flex flex-col">
             <h2 className="text-lg font-bold">Extension Details</h2>
             <p className="mt-2">Here are the details about the extension.</p>
 
-            <div className="mt-4">
+            <div className="mt-4 flex-grow overflow-y-auto">
               <h3 className="font-semibold">Why was this tool created?</h3>
               <p className="contentset">
-                During office hours, users often face a number of punch-ins or punch-outs. Amidst this, they lose track of when it's time to leave the office. To address this issue, we developed this tool. Initially, we created a webpage-based tool where users had to manually check the time on another sheet, remember it, enter it here, and then click a button to display the time they could leave the office.<br /><br />
-
-                We have simplified that process by introducing a solution in the form of a browser extension called "Leave Now." This extension provides employees with the facility of "auto calculate time," making it easier for them.<br /><br />
-
+                During office hours, users often face a number of punch-ins or
+                punch-outs. Amidst this, they lose track of when it's time to
+                leave the office. To address this issue, we developed this tool.
+                Initially, we created a webpage-based tool where users had to
+                manually check the time on another sheet, remember it, enter it
+                here, and then click a button to display the time they could
+                leave the office.
+                <br />
+                <br />
+                We have simplified that process by introducing a solution in the
+                form of a browser extension called "Leave Now." This extension
+                provides employees with the facility of "auto calculate time,"
+                making it easier for them.
+                <br />
+                <br />
                 The steps to use this tool are outlined below.
-
               </p>
 
               <h3 className="font-semibold mt-4">Steps to Get the Extension</h3>
               <div className="contentset">
                 <ol className="list-decimal ml-6">
                   <li>Click on the "Get Extension" button.</li>
-                  <li>Open the Chrome Web Store and click on "Add to Chrome" for the extension.</li>
-                  <li>Pin the "Leave Now" extension to your browser toolbar.</li>
+                  <li>
+                    Open the Chrome Web Store and click on "Add to Chrome" for
+                    the extension.
+                  </li>
+                  <li>
+                    Pin the "Leave Now" extension to your browser toolbar.
+                  </li>
                 </ol>
               </div>
 
@@ -221,18 +235,26 @@ const Navbar = () => {
             </div>
 
             <div className="mt-4 flex justify-end">
-              <button onClick={togglePopup} className="mr-2 bg-blue-500 text-white px-4 py-2 rounded">
+              <button
+                onClick={togglePopup}
+                className="mr-2 bg-blue-500 text-white px-4 py-2 rounded"
+              >
                 Close
               </button>
-              <Link href="https://chromewebstore.google.com/detail/leave-now/kggajnngbeidnchjibidcebolhhkifak" target="_blank">
-                <button onClick={togglePopup} className="bg-blue-500 text-white px-4 py-2 rounded">
+              <Link
+                href="https://chromewebstore.google.com/detail/leave-now/kggajnngbeidnchjibidcebolhhkifak"
+                target="_blank"
+              >
+                <button
+                  onClick={togglePopup}
+                  className="bg-blue-500 text-white px-4 py-2 rounded"
+                >
                   Get Extension
                 </button>
               </Link>
             </div>
           </div>
-        </div >
-
+        </div>
       )}
     </>
   );
