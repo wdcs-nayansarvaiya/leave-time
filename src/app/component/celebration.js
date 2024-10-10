@@ -12,6 +12,37 @@ const ConfettiButton = () => {
 
       if (celkeyGet == null) {
         localStorage.setItem("celkey", 0);
+        const button = document.querySelector(".js-confetti");
+
+        // Function to handle the confetti explosion
+        const fireConfetti = () => {
+          confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 },
+          });
+        };
+
+        const handleButtonClick = () => {
+          fireConfetti();
+          if (sound) {
+            sound.currentTime = 0;
+            sound.play();
+          }
+          // Show the modal when the button is clicked
+        };
+
+        // Add the click event listener to the button
+        button.addEventListener("click", handleButtonClick);
+
+        // Trigger the click event once after component mounts
+        button.click();
+
+        // Cleanup event listener on component unmount
+        setShowModal(true);
+        return () => {
+          button.removeEventListener("click", handleButtonClick);
+        };
       } else if (celkeyGet == 0) {
         const button = document.querySelector(".js-confetti");
 
