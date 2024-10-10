@@ -6,6 +6,7 @@ import TheamNewComp from "./component/theamNew";
 import Navbar from "./component/navbar2";
 import { logEvent } from "firebase/analytics";
 import { analytics } from "../app/utils/firebase";
+import ConfettiButton from "./component/celebration";
 
 const HomePage = () => {
   useEffect(() => {
@@ -17,6 +18,9 @@ const HomePage = () => {
   return (
     <>
       <Navbar />
+      <div>
+        <ConfettiButton />
+      </div>
     </>
   );
 };
